@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        主页面
+    </title>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>酒精浓度</th>
+            </tr>
+            </thead>
+            <tbody th:each="mq3:${mq3s}">
+            <tr>
+                <td th:text="${mq3.getTime()}"></td>
+                <td th:text="${mq3.getData()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>一氧化碳浓度</th>
+        </tr>
+        </thead>
+        <tbody th:each="mq7:${mq7s}">
+        <tr>
+            <td th:text="${mq7.getTime()}"></td>
+            <td th:text="${mq7.getData()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>温度(℃)</th>
+            <th>湿度(%)</th>
+        </tr>
+        </thead>
+        <tbody th:each="am2302:${am2302s}">
+        <tr>
+            <td th:text="${am2302.getTime()}"></td>
+            <td th:text="${am2302.getTemperature()}"></td>
+            <td th:text="${am2302.getHumidity()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
